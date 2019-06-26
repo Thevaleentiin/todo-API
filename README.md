@@ -1,2 +1,2 @@
-# todo-API
-API REST todo-task.fr
+## Todo. API
+    API pour l'application Todo. en cours de développement.
