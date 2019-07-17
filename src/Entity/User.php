@@ -21,7 +21,7 @@ class User
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -31,31 +31,31 @@ class User
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $telephone;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prenom;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $telephone_number;
+    private $imgVehicule;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getName(): ?string
     {
-        return $this->nom;
+        return $this->name;
     }
 
-    public function setNom(string $nom): self
+    public function setName(string $name): self
     {
-        $this->nom = $nom;
+        $this->name = $name;
 
         return $this;
     }
@@ -72,6 +72,18 @@ class User
         return $this;
     }
 
+    public function getTelephone(): ?string
+    {
+        return $this->telephone;
+    }
+
+    public function setTelephone(string $telephone): self
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
     public function getPassword(): ?string
     {
         return $this->password;
@@ -84,26 +96,14 @@ class User
         return $this;
     }
 
-    public function getPrenom(): ?string
+    public function getImgVehicule(): ?string
     {
-        return $this->prenom;
+        return $this->imgVehicule;
     }
 
-    public function setPrenom(string $prenom): self
+    public function setImgVehicule(string $imgVehicule): self
     {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    public function getTelephoneNumber(): ?string
-    {
-        return $this->telephone_number;
-    }
-
-    public function setTelephoneNumber(string $telephone_number): self
-    {
-        $this->telephone_number = $telephone_number;
+        $this->imgVehicule = $imgVehicule;
 
         return $this;
     }

@@ -21,7 +21,7 @@ class Task
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -29,48 +29,63 @@ class Task
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="datetime")
      */
-    private $prix;
+    private $livraisonDate;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imgTask;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $livraison_date;
+    private $lieuRetrait;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $prix_livreur;
+    private $lieuLivraison;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $produits;
+    private $remuneration;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $destination;
+    private $imgVehicule;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $lieu_retrait;
+    private $taskCategory;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $authorId;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $livreurId;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getName(): ?string
     {
-        return $this->nom;
+        return $this->name;
     }
 
-    public function setNom(string $nom): self
+    public function setName(string $name): self
     {
-        $this->nom = $nom;
+        $this->name = $name;
 
         return $this;
     }
@@ -87,74 +102,110 @@ class Task
         return $this;
     }
 
-    public function getPrix(): ?string
+    public function getLivraisonDate(): ?\DateTimeInterface
     {
-        return $this->prix;
+        return $this->livraisonDate;
     }
 
-    public function setPrix(string $prix): self
+    public function setLivraisonDate(\DateTimeInterface $livraisonDate): self
     {
-        $this->prix = $prix;
+        $this->livraisonDate = $livraisonDate;
 
         return $this;
     }
 
-    public function getLivraisonDate(): ?string
+    public function getImgTask(): ?string
     {
-        return $this->livraison_date;
+        return $this->imgTask;
     }
 
-    public function setLivraisonDate(string $livraison_date): self
+    public function setImgTask(?string $imgTask): self
     {
-        $this->livraison_date = $livraison_date;
-
-        return $this;
-    }
-
-    public function getPrixLivreur(): ?string
-    {
-        return $this->prix_livreur;
-    }
-
-    public function setPrixLivreur(string $prix_livreur): self
-    {
-        $this->prix_livreur = $prix_livreur;
-
-        return $this;
-    }
-
-    public function getProduits(): ?string
-    {
-        return $this->produits;
-    }
-
-    public function setProduits(string $produits): self
-    {
-        $this->produits = $produits;
-
-        return $this;
-    }
-
-    public function getDestination(): ?string
-    {
-        return $this->destination;
-    }
-
-    public function setDestination(string $destination): self
-    {
-        $this->destination = $destination;
+        $this->imgTask = $imgTask;
 
         return $this;
     }
 
     public function getLieuRetrait(): ?string
     {
-        return $this->lieu_retrait;
+        return $this->lieuRetrait;
     }
 
-    public function setLieuRetrait(string $lieu_retrait): self
+    public function setLieuRetrait(string $lieuRetrait): self
     {
-        $this->lieu_retrait = $lieu_retrait;
+        $this->lieuRetrait = $lieuRetrait;
+
+        return $this;
+    }
+
+    public function getLieuLivraison(): ?string
+    {
+        return $this->lieuLivraison;
+    }
+
+    public function setLieuLivraison(string $lieuLivraison): self
+    {
+        $this->lieuLivraison = $lieuLivraison;
+
+        return $this;
+    }
+
+    public function getRemuneration(): ?string
+    {
+        return $this->remuneration;
+    }
+
+    public function setRemuneration(string $remuneration): self
+    {
+        $this->remuneration = $remuneration;
+
+        return $this;
+    }
+
+    public function getImgVehicule(): ?string
+    {
+        return $this->imgVehicule;
+    }
+
+    public function setImgVehicule(string $imgVehicule): self
+    {
+        $this->imgVehicule = $imgVehicule;
+
+        return $this;
+    }
+
+    public function getTaskCategory(): ?string
+    {
+        return $this->taskCategory;
+    }
+
+    public function setTaskCategory(string $taskCategory): self
+    {
+        $this->taskCategory = $taskCategory;
+
+        return $this;
+    }
+
+    public function getAuthorId(): ?int
+    {
+        return $this->authorId;
+    }
+
+    public function setAuthorId(int $authorId): self
+    {
+        $this->authorId = $authorId;
+
+        return $this;
+    }
+
+    public function getLivreurId(): ?int
+    {
+        return $this->livreurId;
+    }
+
+    public function setLivreurId(?int $livreurId): self
+    {
+        $this->livreurId = $livreurId;
 
         return $this;
     }
